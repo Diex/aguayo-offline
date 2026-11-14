@@ -1,9 +1,12 @@
 # Offline panel formula tester
 
 A local plain JavaScript/Canvas editor for the fixed Aguayo panel: eight strips,
-64 rows, mirrored into a 16 × 64 image. Python only serves the files and opens
-the browser. No Arduino source parsing, C++ compilation, packages, CDNs, or remote
+64 rows, mirrored into a 16 × 64 image. Open `tools/panel_editor/index.html` directly in a modern browser, or double-click
+`Start Panel Tester.command` on macOS. No installation or build is needed.
+The optional Python launcher serves the files and opens the browser. No Arduino source parsing, C++ compilation, packages, CDNs, or remote
 services are used by the editor. Firmware is not modified.
+
+Optional localhost mode (requires Python 3):
 
 ```sh
 python3 tools/render_offline.py
@@ -12,7 +15,10 @@ python3 tools/render_offline.py --port 8766 --no-browser
 ```
 
 Open the printed localhost URL. Ctrl+C stops the server. Keep the same port to
-retain browser storage (storage belongs to the page's origin).
+retain browser storage (storage belongs to the page's origin). Local-file and
+localhost sessions have separate storage; use project JSON to transfer between
+them. Local-file storage can vary by browser and file location, so keep JSON
+backups. See [the root README](../README.md) for clone-and-run instructions.
 
 ## Edit and try
 
